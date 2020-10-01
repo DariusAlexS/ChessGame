@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/ChessField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +26,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -54,12 +60,16 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -71,7 +81,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1hxgrFSqLlV5fDZb7fPVWRBgcM6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -80,16 +92,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -118,12 +131,12 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="ChessGame" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -196,13 +209,53 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="436" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1601303727682">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="436" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1601303727682" />
+    <state x="361" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601562021517">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="361" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601562021517" />
+    <state width="1202" height="74" key="GridCell.Tab.0.bottom" timestamp="1601303869688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="74" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601303869688" />
+    <state width="1202" height="74" key="GridCell.Tab.0.center" timestamp="1601303869688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="74" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601303869688" />
+    <state width="1202" height="74" key="GridCell.Tab.0.left" timestamp="1601303869688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="74" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601303869688" />
+    <state width="1202" height="74" key="GridCell.Tab.0.right" timestamp="1601303869688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1202" height="74" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601303869688" />
+    <state x="361" y="101" key="extract.method.dialog" timestamp="1601297805756">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="361" y="101" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1601297805756" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1601298535118">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1280.680@0.0.1280.680" timestamp="1601298535118" />
+    <state x="424" y="88" key="refactoring.ChangeSignatureDialog" timestamp="1601303733859">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="424" y="88" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1601303733859" />
+    <state x="287" y="153" key="run.anything.popup" timestamp="1601307032952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="287" y="153" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1601307032952" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
