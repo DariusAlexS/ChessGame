@@ -12,11 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ChessField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ChessField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pawn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -242,10 +237,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1202" height="151" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602065696204" />
-    <state x="361" y="101" key="extract.method.dialog" timestamp="1601297805756">
+    <state x="361" y="101" key="extract.method.dialog" timestamp="1602069818401">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="361" y="101" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1601297805756" />
+    <state x="361" y="101" key="extract.method.dialog/0.0.1280.680@0.0.1280.680" timestamp="1602069818401" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601298535118">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

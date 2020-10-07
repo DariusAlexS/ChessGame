@@ -2,6 +2,10 @@ package main;
 
 public class Pawn extends ChessPiece{
 
+    private enum PawnMovementType
+    {
+        ONEFORWARD, TWOFORWARD, DIAGONALATTACK, ILLEGAL
+    }
     // protected ChessField currentField;
     // protected final Color pieceColor;
     private boolean hasPawnMadeFirstMove;
@@ -10,6 +14,7 @@ public class Pawn extends ChessPiece{
     public Pawn(Color pieceColor, ChessField startField) {
         super(pieceColor, startField);
         this.hasPawnMadeFirstMove = false;
+
         if(pieceColor == Color.BLACK)
             this.directionalModifier = 1;
         else this.directionalModifier = -1;
@@ -17,64 +22,77 @@ public class Pawn extends ChessPiece{
 
     @Override
     public void movePiece(ChessField destinationField, ChessBoard chessBoard) {
+        if (isMoveIsLegal(destinationField, chessBoard))
+        {} // @Question - what should the capturing other pieces logic look like
 
-    }
-    /*
-    @Override
-    public void movePiece(ChessField destinationField) {
-        // How to know when which direction the pawn should move, i.e. where's the opposite king located?
-        // How to know when a pawn has moved next to this pawn 2 fields in the past move?
+            // notify the gameStateManager if a piece was captured.
+            /* If an opposing piece was standing on the field,
+               to which a given piece moved, the opposing piece is captured:
+               It is removed from the players collection of Pieces and added to the collection
+               of the captured pieces of the opposing player  (between Player & pieces?)
+               Observer pattern?
+               GameStateManager ?
+               
 
+             */
     }
-*/
+
+
     @Override
     public boolean isMoveIsLegal(ChessField destinationField, ChessBoard chessBoard) {
-        return false;
+        if(this.canPawnReachDestination(destinationField, chessBoard))
+            // TODO - figure out logic how to check if after a move the king won't be checked
+            return true;
     }
 
-    public boolean canPieceReachDestination(ChessField destinationField, ChessBoard chessBoard) {
+    public boolean canPawnReachDestination(ChessField destinationField, ChessBoard chessBoard) {
 
+        ChessPiece pieceOnDestField = destinationField.getOccupyingChessPiece();
+        PawnMovementType movementType = this.calculateMovementTypeForPawn(destinationField, chessBoard);
+
+        // check if other piece has same color
+        if (hasOtherPieceSameColor(pieceOnDestField))
+            return false;
+        switch (movementType) {
+            case ILLEGAL:
+                return false;
+            break;
+            case ONEFORWARD:
+                return canPawnMoveForwardByOne(chessBoard);
+            break;
+            case TWOFORWARD:
+                return canPawnMoveForwardByTwo(chessBoard);
+            break;
+            case DIAGONALATTACK:
+                return canPawnAttackDiagonalField(destinationField);
+            break;
+        }
+    }
+
+    private PawnMovementType calculateMovementTypeForPawn(ChessField destinationField, ChessBoard chessBoard)
+    {
         int currX, currY, destX, destY;
-        ChessPiece pieceOnDestField;
 
         currX = this.currentField.getX();
         currY = this.currentField.getY();
         destX = destinationField.getX();
         destY = destinationField.getY();
 
-        pieceOnDestField = destinationField.getOccupyingChessPiece();
+        if (destY - currY == 1 * this.directionalModifier  && currX == destX)
+            return PawnMovementType.ONEFORWARD;
 
-        // check if other piece has same color
-        if (hasOtherPieceSameColor(pieceOnDestField))
-            return false;
-        // TODO - refactor logic to multiply the distance by 1/-1 depending on the piece color
-        if (this.pieceColor == Color.WHITE)
-        {
-            // movement by 1 field forward
-            if (destY - currY == 1 && currX == destX) {
-                return !destinationField.isFieldOccupiedByPiece();
-            }
-            // movement by 2 fields forward
-            else if (!hasPawnMadeFirstMove() && destY - currY == 2 && currX == destX) {
-                // TODO - check if the field 1 distance away is empty as well
+        else if (destY - currY == 2 * this.directionalModifier && currX == destX)
+            return PawnMovementType.TWOFORWARD;
 
-                return !destinationField.isFieldOccupiedByPiece();
-            }
-            // diagonal attack
-            else {
+        else if ( (Math.abs(currX - destX) == 1) &&
+                (currY + this.directionalModifier == destY) )
+            return PawnMovementType.DIAGONALATTACK;
 
-            }
-        }
-        else // if (this.pieceColor == Color.BLACK)
-        {
+        else return PawnMovementType.ILLEGAL;
 
-        }
-        // check if movement 1 field ahead is eligible (need information on which direction we're allowed to move to)
-
-        // check if movement 2 fields ahead is eligible
     }
 
-    private boolean canPieceMoveForwardByOne(ChessBoard chessBoard)
+    private boolean canPawnMoveForwardByOne(ChessBoard chessBoard)
     {
 
         int destYFieldCoordinate = this.currentField.getY() + 1 * this.directionalModifier;
@@ -83,26 +101,19 @@ public class Pawn extends ChessPiece{
         return !fieldInFrontOfPawn.isFieldOccupiedByPiece();
     }
 
-    private boolean canPieceMoveForwardByTwo(ChessBoard chessBoard)
+    private boolean canPawnMoveForwardByTwo(ChessBoard chessBoard)
     {
-        int dirModifier = calculateDirectionalModifierBasedOnPieceColor();
-        int destYFieldCoordinate = this.currentField.getY() + 2 * dirModifier;
+        int destYFieldCoordinate = this.currentField.getY() + 2 *  this.directionalModifier;
         ChessField destField = chessBoard.getChessField(this.currentField.getX(),destYFieldCoordinate);
 
-        if (this.hasPawnMadeFirstMove() && canPieceMoveForwardByOne(chessBoard) && !destField.isFieldOccupiedByPiece())
+        if (!this.hasPawnMadeFirstMove() && canPawnMoveForwardByOne(chessBoard) && !destField.isFieldOccupiedByPiece())
             return true;
         else return false;
     }
-    private boolean isDestinationFieldDiagonalToPiece(ChessField destField)
-    {
-        return (Math.abs(this.currentField.getX() - destField.getX()) == 1 &&
-        this.currentField.getY() + this.directionalModifier == destField.getY());
-    }
 
-    private boolean canPieceAttackDiagonalField(ChessBoard chessBoard, ChessField destDiagonalField)
+    private boolean canPawnAttackDiagonalField(ChessField destDiagonalField)
     {
-        return isDestinationFieldDiagonalToPiece(destDiagonalField) &&
-                destDiagonalField.
+       return destDiagonalField.isFieldOccupiedByPieceOfOpposingColor(this.pieceColor);
     }
 
     private int calculateDirectionalModifierBasedOnPieceColor()
