@@ -41,13 +41,26 @@ public class ChessField {
         return this.occupyingChessPiece != null;
     }
 
+    public boolean isFieldOccupiedByPieceOfOpposingColor(Color attackingPieceColor)
+    {
+        if(this.isFieldOccupiedByPiece())
+            return this.occupyingChessPiece.getPieceColor() != attackingPieceColor;
+        else return false;
+    }
+
+    public boolean isFieldOccupiedByPieceOfSameColor(Color otherPieceColor)
+    {   if(this.isFieldOccupiedByPiece())
+            return this.occupyingChessPiece.getPieceColor() == otherPieceColor;
+        else return false;
+    }
+
     public void setToOccupiedByPiece(ChessPiece occupyingPiece)
     { this.occupyingChessPiece = occupyingPiece; }
 
     public void setToUnoccupiedByPiece()
     { this.occupyingChessPiece = null; }
 
-    public ChessPiece getOccupyingChessPiece(){
-        return this.occupyingChessPiece;
+    public ChessPiece getOccupyingChessPiece()
+    { return this.occupyingChessPiece;
     }
 }

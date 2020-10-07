@@ -20,7 +20,8 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         ChessBoard cb = new ChessBoard();
-        cb.printChessFields();
+       // cb.printChessFields();
+
         launch(args);
     }
 }

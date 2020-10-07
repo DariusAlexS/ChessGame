@@ -40,5 +40,7 @@ public class ChessBoard {
         }
     }
 
+    public ChessField getChessField(int x, int y)
+    { return this.chessFields[x][y];}
 
 }

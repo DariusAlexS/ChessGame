@@ -10,9 +10,9 @@ public abstract class ChessPiece {
         this.pieceColor     = pieceColor;
     }
 
-    public abstract void movePiece(ChessField destinationField);
+    public abstract void movePiece(ChessField destinationField, ChessBoard chessBoard);
 
-    public abstract boolean validateMoveIsLegal(ChessField destinationField, ChessField[][] chessBoard);
+    public abstract boolean isMoveIsLegal(ChessField destinationField, ChessBoard chessBoard);
 
     public ChessField getCurrentField() {
         return currentField;
